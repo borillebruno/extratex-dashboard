@@ -199,9 +199,16 @@ function App() {
       </label>
       <div className={`flex items-center border rounded-lg shadow-sm ${disabled ? 'bg-gray-100' : 'focus-within:ring-2 focus-within:ring-blue-500'}`}>
         <input
-          type="number"
+          type="text"
+          inputMode="decimal"
+          pattern="[0-9]*[.]?[0-9]*"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            if (value === '' || /^\d*\.?\d*$/.test(value)) {
+              onChange(value);
+            }
+          }}
           placeholder={placeholder}
           className="shadow appearance-none border-none rounded-l-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex-grow"
           disabled={disabled}
