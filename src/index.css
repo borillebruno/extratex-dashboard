@@ -3,13 +3,10 @@
 @tailwind utilities;
 
 .content-container {
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.results-container {
-  height: calc(100vh - 2rem);
-  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="text"] {
