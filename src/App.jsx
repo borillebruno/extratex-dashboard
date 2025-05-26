@@ -236,7 +236,7 @@ function App() {
 
   return (
     <div className="content-container bg-gradient-to-br from-blue-100 to-indigo-200 p-4 sm:p-6 lg:p-8 font-inter">
-      <div className="mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-6xl border border-gray-200">
+      <div className="mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
         <div className="flex justify-center mb-8">
           <img
             src={`${process.env.PUBLIC_URL}/Extratex Logo.png`}
@@ -252,7 +252,7 @@ function App() {
           <LivePriceDisplay label="Live LBMA Silver" price={liveSilverPrice} unit="$/troy oz" />
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-100">
             <h2 className="text-2xl font-bold text-gray-700 mb-6">Input Parameters</h2>
             <InputField
@@ -374,7 +374,7 @@ function App() {
             </button>
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100">
+          <div className="results-container bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100 flex flex-col">
             <div>
               <h2 className="text-2xl font-bold text-blue-700 mb-6">Calculated Results</h2>
               <ResultDisplay label="Dry Metric Ton (DMT)" value={dryMetricTon} unit="tons" />
