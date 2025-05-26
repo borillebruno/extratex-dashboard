@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overflow-y: scroll;
+html, body {
   height: 100%;
-}
-
-body {
-  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 .content-container {
@@ -19,6 +18,7 @@ body {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Remove spinner buttons from number inputs */
@@ -32,8 +32,26 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* Custom input styles */
+.input-container {
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  transition: none;
+}
+
 /* Prevent content shift */
 .results-container {
   position: relative;
   height: 100%;
+}
+
+/* Ensure consistent layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
 }
