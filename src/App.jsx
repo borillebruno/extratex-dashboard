@@ -193,24 +193,25 @@ function App() {
   };
 
   const InputField = ({ label, value, onChange, placeholder, unit, disabled = false }) => (
-    <div className="mb-4">
+    <div className="mb-4 input-container">
       <label className="block text-gray-700 text-sm font-bold mb-2">
         {label}
       </label>
       <div className={`flex items-center border rounded-lg shadow-sm ${disabled ? 'bg-gray-100' : 'focus-within:ring-2 focus-within:ring-blue-500'}`}>
         <input
-          type="number"
+          type="text"
+          inputMode="decimal"
+          pattern="[0-9]*[.]?[0-9]*"
           value={value}
           onChange={(e) => {
-            const value = e.target.value;
-            if (value === '' || /^\d*\.?\d*$/.test(value)) {
-              onChange(value);
+            const newValue = e.target.value;
+            if (newValue === '' || /^\d*\.?\d*$/.test(newValue)) {
+              onChange(newValue);
             }
           }}
           placeholder={placeholder}
-          className="shadow appearance-none border-none rounded-l-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex-grow"
+          className="input-field shadow appearance-none border-none rounded-l-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex-grow"
           disabled={disabled}
-          step="any"
         />
         {unit && <span className="px-3 text-gray-500 bg-gray-100 rounded-r-lg border-l border-gray-200 py-2">{unit}</span>}
       </div>
