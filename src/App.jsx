@@ -201,12 +201,11 @@ function App() {
         <input
           type="text"
           inputMode="decimal"
-          pattern="[0-9]*[.]?[0-9]*"
           value={value}
           onChange={(e) => {
-            const value = e.target.value;
-            if (value === '' || /^\d*\.?\d*$/.test(value)) {
-              onChange(value);
+            const newValue = e.target.value;
+            if (newValue === '' || /^\d*\.?\d*$/.test(newValue)) {
+              onChange(newValue);
             }
           }}
           placeholder={placeholder}
@@ -236,7 +235,7 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 p-4 sm:p-6 lg:p-8 font-inter">
+    <div className="content-container bg-gradient-to-br from-blue-100 to-indigo-200 p-4 sm:p-6 lg:p-8 font-inter">
       <div className="mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8 flex items-center justify-center">
           <img
@@ -376,7 +375,7 @@ function App() {
             </button>
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100 flex flex-col justify-between">
+          <div className="results-container bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100 flex flex-col">
             <div>
               <h2 className="text-2xl font-bold text-blue-700 mb-6">Calculated Results</h2>
               <ResultDisplay label="Dry Metric Ton (DMT)" value={dryMetricTon} unit="tons" />
