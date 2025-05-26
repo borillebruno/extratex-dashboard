@@ -237,15 +237,14 @@ function App() {
   return (
     <div className="content-container bg-gradient-to-br from-blue-100 to-indigo-200 p-4 sm:p-6 lg:p-8 font-inter">
       <div className="mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8 flex items-center justify-center">
+        <div className="flex justify-center mb-8">
           <img
             src={`${process.env.PUBLIC_URL}/Extratex Logo.png`}
             alt="Extratex Logo"
-            className="h-10 w-auto mr-3 inline-block"
-            onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x40/cccccc/333333?text=Logo'; }}
+            className="h-20 w-auto"
+            onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/200x80/cccccc/333333?text=Logo'; }}
           />
-          Extratex Copper Dashboard
-        </h1>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <LivePriceDisplay label="Live LME Copper" price={liveLMECopperPrice} unit="$/ton" />
