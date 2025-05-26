@@ -5,6 +5,7 @@
 .content-container {
   min-height: 100vh;
   overflow-y: auto;
+  padding-right: calc(100vw - 100%);
 }
 
 input[type="text"] {
@@ -15,4 +16,12 @@ input[type="text"]::-webkit-outer-spin-button,
 input[type="text"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin-right: 0 !important;
 }
