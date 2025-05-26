@@ -2,4 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add any custom CSS here if needed */
+.content-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.results-container {
+  height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+input[type="text"] {
+  -moz-appearance: textfield;
+}
+
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
