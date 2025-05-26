@@ -201,9 +201,10 @@ function App() {
         <input
           type="text"
           inputMode="decimal"
+          pattern="[0-9]*[.]?[0-9]*"
           value={value}
           onChange={(e) => {
-            const newValue = e.target.value;
+            const newValue = e.target.value.replace(/[^\d.]/g, '');
             if (newValue === '' || /^\d*\.?\d*$/.test(newValue)) {
               onChange(newValue);
             }
